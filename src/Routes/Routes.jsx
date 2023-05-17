@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../Component/Home";
-import AllToys from "../Component/AllToys";
-import MyToys from "../Component/MyToys";
-import AddAToy from "../Component/AddAToy";
-import Blogs from "../Component/Blogs";
+import Home from "../Components/Home";
+import AllToys from "../Components/AllToys";
+import MyToys from "../Components/MyToys";
+import AddAToy from "../Components/AddAToy";
+import Blogs from "../Components/Blogs";
 import Layout from "../Layout/Layout";
-import Login from "../Component/Login";
+import Login from "../Components/Login";
 
 const router = createBrowserRouter([
     {

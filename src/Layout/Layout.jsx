@@ -1,13 +1,15 @@
 import React from 'react';
-import Navbar from '../Component/Navbar'
+import Navbar from '../Components/Navbar'
 import { Outlet } from 'react-router-dom';
 
 
 function Layout() {
     return (
         <>
-            <Navbar></Navbar>
-            <Outlet></Outlet>
+            <div className='container mx-auto'>
+                <Navbar></Navbar>
+                <Outlet></Outlet>
+            </div>
         </>
     )
 }

@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../Components/Home";
+import Home from "../Components/Home/Home";
 import AllToys from "../Components/AllToys";
 import MyToys from "../Components/MyToys";
 import AddAToy from "../Components/AddAToy";

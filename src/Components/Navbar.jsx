@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
-    <div className='flex justify-between items-center bg-purple-100 py-5 px-5 text-cyan-950'>
+    <div className='flex justify-between items-center bg-purple-100 py-5 px-5'>
       <div className='flex gap-2 items-center'>
         <img src="toylogo.png" className=' w-14 rounded-full' />
         <h1 className='text-xl font-bold'>ToyRifleWorld</h1>

@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 function Layout() {
     return (
         <>
-            <div className='container mx-auto'>
+            <div className='container mx-auto  text-cyan-950'>
                 <Navbar></Navbar>
                 <Outlet></Outlet>
             </div>

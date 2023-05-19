@@ -15,19 +15,19 @@ function Register() {
     const email = form.email.value;
     const password = form.password.value;
     const photoUrl = form.photo.value;
-    console.log(email, password,name, photoUrl);
+    //console.log(email, password,name, photoUrl);
 
     signUp(email, password)
       .then(result => {
           const loggedUser=result.user;
-          console.log(loggedUser);
+          //console.log(loggedUser);
           updateProfile(auth.currentUser,{
             displayName:name,
             photoURL:photoUrl
           })
       })
       .catch(error=>{
-        console.log(error);
+        //console.log(error);
         setError(error.message)
       })
 

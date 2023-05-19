@@ -4,13 +4,13 @@ import { AuthContext } from './Provider/AuthProvider'
 
 function Navbar() {
   const { user,logOut } = useContext(AuthContext);
-  console.log('current user', user);
+  //console.log('current user', user);
 
   const handleSignOut=()=>{
     logOut()
     .then()
     .catch(error=>{
-      console.log(error);
+      //console.log(error);
     })
   }
   return (

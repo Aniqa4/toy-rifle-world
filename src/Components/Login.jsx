@@ -1,10 +1,12 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from './Provider/AuthProvider'
+import { GoogleAuthProvider } from 'firebase/auth';
 
 function Login() {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleSignIn } = useContext(AuthContext);
   const [error, setError] = useState('');
+  const provider= new GoogleAuthProvider;
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -24,7 +26,19 @@ function Login() {
         console.log(error);
         setError(error.message)
       })
+  }
 
+  const handleGoogleSignIn=()=>{
+    googleSignIn(provider)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        form.reset();
+      })
+      .catch(error => {
+        console.log(error);
+        setError(error.message)
+      })
   }
 
 
@@ -42,7 +56,7 @@ function Login() {
         <input type="submit" value="Log In" className='border rounded bg-cyan-900 text-white p-2' />
       </form>
       <div className=' text-center mt-5 font-semibold border border-cyan-950 p-2 rounded'>
-        <button>Log In with Google</button>
+        <button onClick={handleGoogleSignIn}>Log In with Google</button>
       </div>
       <h1 className=' text-center mt-5'>Don't have an account?<Link to='/register' className='link'>Register</Link></h1>
       <p className=' text-center text-red-900 pt-2'>{error}</p>
@@ -50,4 +64,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Login;

@@ -9,7 +9,7 @@ const auth = getAuth(app);
 
 function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
 
     const signUp=(email,password)=>{

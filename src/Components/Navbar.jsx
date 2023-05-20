@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from './Provider/AuthProvider'
-import ActiveLink from './ActiveLink/ActiveLink';
+import ActiveLink from './ActiveLink.jsx/ActiveLink';
 
 function Navbar() {
   const { user,logOut } = useContext(AuthContext);

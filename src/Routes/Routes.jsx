@@ -8,6 +8,7 @@ import Layout from "../Layout/Layout";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
 import ToyDetails from "../Components/ToyDetails";
+import Navigator from "../Components/Navigator/Navigator";
 
 const router = createBrowserRouter([
     {
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/toy/:id',
-                element:<ToyDetails></ToyDetails>
+                element:<Navigator><ToyDetails></ToyDetails></Navigator>
             }
         ]
     },

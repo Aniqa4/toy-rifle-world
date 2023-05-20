@@ -1,26 +1,36 @@
 import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from './Provider/AuthProvider'
 import { GoogleAuthProvider } from 'firebase/auth';
 
 function Login() {
   const { signIn, googleSignIn } = useContext(AuthContext);
   const [error, setError] = useState('');
-  const provider= new GoogleAuthProvider;
+  const provider = new GoogleAuthProvider;
+
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  //console.log(location.state.from.pathname);
+
+
 
   const handleLogin = (e) => {
     e.preventDefault();
-
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
     //console.log(email, password);
 
+
+    //---------login with email and password-------
     signIn(email, password)
       .then(result => {
         const loggedUser = result.user;
         //console.log(loggedUser);
         form.reset();
+        navigate(from,{replace:true})
       })
       .catch(error => {
         //console.log(error);
@@ -28,12 +38,14 @@ function Login() {
       })
   }
 
-  const handleGoogleSignIn=()=>{
+
+  //----------login with google--------------
+  const handleGoogleSignIn = () => {
     googleSignIn(provider)
       .then(result => {
-        //const loggedUser = result.user;
-        console.log(loggedUser);
-        form.reset();
+        const loggedUser = result.user;
+        //console.log(loggedUser);
+        navigate(from,{replace:true})
       })
       .catch(error => {
         //console.log(error);

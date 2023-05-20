@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { AuthContext } from './Provider/AuthProvider'
+
 
 function AllToys() {
-  const { user } = useContext(AuthContext);
   const [allToys, setAllToys] = useState([]);
 
   useEffect(() => {
@@ -43,12 +42,7 @@ function AllToys() {
                 <td>{toy.name}</td>
                 <td>{toy.subcategory}</td>
                 <td>{toy.rating}</td>
-                <td>
-                  {
-                    user ? <Link to={`/toy/${toy._id}`}><button className=' underline'>View Details</button></Link> :
-                      <Link to="/login"><button className=' underline'>View Details</button></Link>
-                  }
-                </td>
+                <td><Link to={`/toy/${toy._id}`}><button className=' underline'>View Details</button></Link></td>
               </tr>)
           }
         </tbody>

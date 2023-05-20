@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import { Tab, TabList, Tabs, TabPanel } from 'react-tabs'
 
 function ShopByCategory() {
@@ -34,7 +35,7 @@ function ShopByCategory() {
             })
     }, [])
 
-    console.log(ar);
+    //console.log(ar);
     return (
         <div>
             <h1 className=' text-center text-5xl font-semibold pb-5'>Shop by Category</h1>
@@ -57,7 +58,7 @@ function ShopByCategory() {
                                     <h1 className='pt-5 text-xl font-semibold'>Name : {x.name}</h1>
                                     <p>Price : {x.price}</p>
                                     <p>Rating :{x.rating}</p>
-                                    <button>View Details</button>
+                                    <Link to={`/toy/${x._id}`}><button className=' underline'>View Details</button></Link>
                                 </div>)
                             }
                         </div>
@@ -73,7 +74,7 @@ function ShopByCategory() {
                                     <h1 className='pt-5 text-xl font-semibold'>Name : {x.name}</h1>
                                     <p>Price : {x.price}</p>
                                     <p>Rating :{x.rating}</p>
-                                    <button>View Details</button>
+                                    <Link to={`/toy/${x._id}`}><button className=' underline'>View Details</button></Link>
                                 </div>)
                             }
                         </div>
@@ -89,7 +90,7 @@ function ShopByCategory() {
                                     <h1 className='pt-5 text-xl font-semibold'>Name : {x.name}</h1>
                                     <p>Price : {x.price}</p>
                                     <p>Rating :{x.rating}</p>
-                                    <button>View Details</button>
+                                    <Link to={`/toy/${x._id}`}><button className=' underline'>View Details</button></Link>
                                 </div>)
                             }
                         </div>

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from './Provider/AuthProvider'
+import ActiveLink from './ActiveLink/ActiveLink';
 
 function Navbar() {
   const { user,logOut } = useContext(AuthContext);
@@ -20,11 +21,15 @@ function Navbar() {
         <h1 className='text-xl font-bold'>ToyRifleWorld</h1>
       </div>
       <div className='flex gap-5'>
-        <Link to='/'>Home</Link>
-        <Link to='/alltoys'>All Toys</Link>
-        <Link to='/mytoys'>My Toys</Link>
-        <Link to='/addatoy'>Add a Toy</Link>
-        <Link to='/blogs'>Blogs</Link>
+        <ActiveLink to='/'>Home</ActiveLink>
+        <ActiveLink to='/alltoys'>All Toys</ActiveLink>
+        {
+          user&& <ActiveLink to='/mytoys'>My Toys</ActiveLink>
+        }
+        {
+          user&&<ActiveLink to='/addatoy'>Add a Toy</ActiveLink>
+        }
+        <ActiveLink to='/blogs'>Blogs</ActiveLink>
       </div>
       <div className='flex'>
         {

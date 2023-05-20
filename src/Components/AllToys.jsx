@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from './Provider/AuthProvider'
 
 function AllToys() {
-
-  const [allToys, setAllToys] = useState([])
+  const { user } = useContext(AuthContext);
+  const [allToys, setAllToys] = useState([]);
 
   useEffect(() => {
     fetch('https://toy-marketplace-server-aniqa4.vercel.app/alltoys')
       .then(res => res.json())
       .then(data => {
-        setAllToys(data)
+        setAllToys(data);
       })
   }, [])
+
+  if (!allToys) {
+    return <div>loading....</div>
+  }
 
   //console.log(allToys);
   return (
@@ -38,7 +43,12 @@ function AllToys() {
                 <td>{toy.name}</td>
                 <td>{toy.subcategory}</td>
                 <td>{toy.rating}</td>
-                <td><Link to={`/toy/${toy._id}`}><button className=' underline'>View Details</button></Link></td>
+                <td>
+                  {
+                    user ? <Link to={`/toy/${toy._id}`}><button className=' underline'>View Details</button></Link> :
+                      <Link to="/login"><button className=' underline'>View Details</button></Link>
+                  }
+                </td>
               </tr>)
           }
         </tbody>

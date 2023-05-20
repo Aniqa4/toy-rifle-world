@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { AuthContext } from './Provider/AuthProvider';
 
 function ToyDetails() {
+    const {user}=useContext(AuthContext);
+    
     const [toyDetails, setToyDetails] = useState([]);
     const parameter = useParams();
     const id = parameter.id;

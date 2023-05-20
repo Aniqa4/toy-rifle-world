@@ -10,11 +10,28 @@ function AddAToy() {
     const form = e.target;
     const name = form.name.value;
     const picture = form.picture.value;
-    const price = form.x.value;
-    const quantity = form.quantity.value;
+    const seller=form.seller.value;
+    const sellerEmail=form.sellerEmail.value;
+    const subcategory=form.subcategory.value;
+    const price = form.price.value;
+    const availableQuantity = form.quantity.value;
     const rating = form.rating.value;
     const description = form.description.value;
-    console.log(name, picture, price, quantity, rating, description);
+    const toyInfo={name,picture,price,rating, seller,sellerEmail, subcategory,availableQuantity,description}
+    console.log(toyInfo);
+
+    fetch('http://localhost:5000/addToys',{
+      method:'POST',
+      headers:{
+        'content-type':'application/json'
+      },
+      body:JSON.stringify(toyInfo)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data);
+    })
+    form.reset();
   }
   return (
     <div className='my-20'>
@@ -34,7 +51,7 @@ function AddAToy() {
 
           <div className='grid'>
             <label>Seller Name</label>
-            <input type="text" name='sellerName' placeholder='Seller Name' defaultValue={user.displayName} disabled className="input rounded border-cyan-950" />
+            <input type="text" name='seller' placeholder='Seller Name' defaultValue={user.displayName} disabled className="input rounded border-cyan-950" />
           </div>
 
           <div className='grid'>

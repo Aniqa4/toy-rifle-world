@@ -6,4 +6,4 @@ function MyToys() {
   )
 }
 
-export default MyToys
+export default MyToys;

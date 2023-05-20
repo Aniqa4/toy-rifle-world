@@ -8,7 +8,7 @@ function Navigator({children}) {
     const location=useLocation();
 
     if(loading){
-      return <div></div>
+      return <div>Loading</div>
     }
 
 

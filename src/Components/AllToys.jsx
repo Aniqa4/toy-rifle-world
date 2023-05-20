@@ -20,7 +20,7 @@ function AllToys() {
   //console.log(allToys);
   return (
     <div>
-      <h1 className=' text-2xl font-semibold my-5'>Toys added by all users</h1>
+      <h1 className=' text-2xl font-semibold my-20 text-center bg-gray-100 py-5'>Toys added by all users</h1>
       <table className='w-11/12 text-center mb-20'>
         <thead>
           <tr className=' border-b'>
@@ -37,7 +37,7 @@ function AllToys() {
             allToys.map((toy, index) =>
               <tr key={toy._id} className='border-b'>
                 <td>{index + 1}</td>
-                <td><img src={toy.picture} className=' ms-24 rounded w-36 ' /></td>
+                <td className=' flex justify-center'><img src={toy.picture} className=' rounded w-36 ' /></td>
                 <td>{toy.seller}</td>
                 <td>{toy.name}</td>
                 <td>{toy.subcategory}</td>

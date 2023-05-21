@@ -4,7 +4,7 @@ function Banner() {
     return (
         <div className='flex justify-center gap-5 my-20'>
             <img src="banner.jpg" className=' rounded' />
-            <div>
+            <div >
                 <h1 className='text-5xl font-semibold'>Welcome to The Toy Rifle World.</h1>
                 <p className=' text-gray-500'>where imagination meets excitement!
                     Discover a wide range of high-quality toy rifles that bring thrilling adventures to life. From classic designs to modern styles,

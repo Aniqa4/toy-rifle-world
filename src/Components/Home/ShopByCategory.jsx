@@ -48,7 +48,7 @@ function ShopByCategory() {
 
     //console.log(ar);
     return (
-        <div>
+        <div data-aos="fade-left">
             <h1 className=' text-center text-5xl font-semibold pb-5'>Shop by Category</h1>
             <Tabs>
                 <TabList>

@@ -10,8 +10,14 @@ import Register from "../Components/Register";
 import ToyDetails from "../Components/ToyDetails";
 import Navigator from "../Components/Navigator/Navigator";
 import UpdateMyToys from "../Components/UpdateMyToys";
+import ErrorPage from "../Components/errorPage";
+
 
 const router = createBrowserRouter([
+    {
+        path:'*',
+        element:<ErrorPage></ErrorPage>
+    },
     {
         path: "/",
         element: <Layout></Layout>,

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from './Provider/AuthProvider';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 function MyToys() {
   const [allToys, setAllToys] = useState([]);
@@ -15,14 +16,27 @@ function MyToys() {
   }, [])
 
   const handleDelete=(id)=>{
-    console.log('id',id);
-    fetch(`http://localhost:5000/myToys/${id}`,{
-      method:'DELETE'
-    })
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data);
-    })
+    const confirmed = window.confirm('Are you sure you want to delete this toy?');
+    if (confirmed) {
+      console.log('id', id);
+      fetch(`http://localhost:5000/myToys/${id}`, {
+        method: 'DELETE'
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.deletedCount > 0) {
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Toy has been deleted',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            const remainingToys = allToys.filter(x => x._id !== id);
+            setAllToys(remainingToys);
+          }
+        });
+    }
   }
   
 
@@ -65,8 +79,8 @@ function MyToys() {
                 <td className=' text-sm'>{toy.sellerEmail}</td>
                 <td>{toy.subcategory}</td>
                 <td>{toy.price}</td>
-                <td>{toy.rating}</td>
                 <td>{toy.availableQuantity}</td>
+                <td>{toy.rating}</td>
                 <td><label htmlFor="my-modal-3" className="underline text-sm">click here to read</label></td>
                 <td>
                   <Link to={`/myToys/${toy._id}`}><button className='border border-cyan-950 rounded-full px-1'>update</button> </Link>

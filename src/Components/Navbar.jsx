@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <div className='flex justify-between items-center bg-cyan-900 text-white py-5 px-5'>
       <div className='flex gap-2 items-center'>
-        <img src="toylogo.png" className=' w-14 rounded-full' />
+        <img src="/toylogo.png" className=' w-14 rounded-full' />
         <h1 className='text-xl font-bold'>ToyRifleWorld</h1>
       </div>
       <div className='flex gap-5'>

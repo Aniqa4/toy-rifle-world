@@ -1,8 +1,9 @@
 import React from 'react'
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 function UpdateMyToys() {
-    const toy=useLoaderData();
+    const toy = useLoaderData();
     console.log(toy);
 
 
@@ -14,8 +15,8 @@ function UpdateMyToys() {
         const description = form.description.value;
         const updateInfo = { price, availableQuantity, description }
         console.log(updateInfo);
-        
-        fetch(`http://localhost:5000/myToys/${toy._id}`, {
+
+        fetch(`https://toy-marketplace-server-aniqa4.vercel.app/myToys/${toy._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -25,7 +26,18 @@ function UpdateMyToys() {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if (data.acknowledged==true) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Toy has been updated',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
             })
+
+            form.reset();
     }
     return (
         <div className='my-20'>
@@ -43,7 +55,7 @@ function UpdateMyToys() {
                     <label>Description </label>
                     <input type="text" name='description' defaultValue={toy.description} className="input rounded border-cyan-950" />
                 </div>
-                <input type="submit" value="Submit" className='text-white bg-cyan-900 rounded py-2 mt-5'  />
+                <input type="submit" value="Submit" className='text-white bg-cyan-900 rounded py-2 mt-5' />
             </form>
         </div>
     )

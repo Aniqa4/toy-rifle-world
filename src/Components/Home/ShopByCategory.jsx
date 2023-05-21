@@ -1,10 +1,19 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Tab, TabList, Tabs, TabPanel } from 'react-tabs'
+import { AuthContext } from '../Provider/AuthProvider';
 
 function ShopByCategory() {
-    
+    const { user } = useContext(AuthContext);
+
+    const handleToast = () => {
+        if (!user) {
+            return alert('Your have to Log in first to view details!')
+            
+        }
+    }
+
     const [ar, setAr] = useState([]);
     const [sr, setSr] = useState([]);
     const [smg, setSmg] = useState([]);
@@ -60,7 +69,7 @@ function ShopByCategory() {
                                     <h1 className='pt-5 text-xl font-semibold'>Name : {x.name}</h1>
                                     <p>Price : {x.price}</p>
                                     <p>Rating :{x.rating}</p>
-                                    <Link to={`/toy/${x._id}`}><button className=' underline'>View Details</button></Link>
+                                    <Link to={`/toy/${x._id}`}><button onClick={handleToast} className=' underline'>View Details</button></Link>
                                 </div>)
                             }
                         </div>

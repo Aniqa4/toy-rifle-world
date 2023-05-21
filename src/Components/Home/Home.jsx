@@ -4,8 +4,10 @@ import Banner from './Banner'
 import ShopByCategory from './ShopByCategory';
 import NewArivals from './NewArivals';
 import BestSellerToys from './BestSellerToys';
+import usetitle from '../../Hooks/useTitle';
 
 function Home() {
+  usetitle('Home')
   return (
     <div>
       <Banner></Banner>

@@ -2,10 +2,12 @@ import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from './Provider/AuthProvider';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import usetitle from '../Hooks/useTitle';
 
 function MyToys() {
   const [allToys, setAllToys] = useState([]);
   const { user, loading } = useContext(AuthContext);
+  usetitle('My Toys')
 
   useEffect(() => {
     fetch('https://toy-marketplace-server-aniqa4.vercel.app/allToys')

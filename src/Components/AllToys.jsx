@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import usetitle from '../Hooks/useTitle';
 
 function AllToys() {
   const [allToys, setAllToys] = useState([]);
+  usetitle('All Toys')
 
   useEffect(() => {
     fetch('https://toy-marketplace-server-aniqa4.vercel.app/alltoys')

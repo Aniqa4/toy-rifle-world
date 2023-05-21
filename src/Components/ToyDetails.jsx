@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AuthContext } from './Provider/AuthProvider';
+import usetitle from '../Hooks/useTitle';
 
 function ToyDetails() {
     const {user}=useContext(AuthContext);
@@ -8,6 +9,7 @@ function ToyDetails() {
     const [toyDetails, setToyDetails] = useState([]);
     const parameter = useParams();
     const id = parameter.id;
+    usetitle('Toy Details')
 
 
     useEffect(() => {

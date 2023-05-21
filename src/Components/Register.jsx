@@ -2,10 +2,13 @@ import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { AuthContext, auth } from './Provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import usetitle from '../Hooks/useTitle';
 
 function Register() {
   const { signUp } = useContext(AuthContext);
   const [error,setError]=useState('');
+
+  usetitle('Register')
 
   const handleSignIn = (e) => {
     e.preventDefault();

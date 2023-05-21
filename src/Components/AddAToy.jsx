@@ -1,10 +1,13 @@
 import React, { useContext } from 'react'
 import { AuthContext } from './Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import usetitle from '../Hooks/useTitle';
 
 function AddAToy() {
   const { user } = useContext(AuthContext);
   console.log(user);
+
+  usetitle('Add a Toy')
 
   if (!user) {
     return <div>Loading.....</div>

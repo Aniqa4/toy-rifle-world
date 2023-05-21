@@ -73,7 +73,7 @@ function MyToys() {
       <h1 className=' text-center text-2xl font-semibold my-20 py-5 bg-gray-100'>MY TOYS</h1>
       <div className="text-right mb-4">
         {!sortedByPrice ? (
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          <button className="bg-cyan-950 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             onClick={sortDataByPrice}
           >
             Sort by Price

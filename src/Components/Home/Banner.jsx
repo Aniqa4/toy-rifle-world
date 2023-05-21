@@ -2,7 +2,7 @@ import React from 'react'
 
 function Banner() {
     return (
-        <div className='flex justify-center gap-5 my-20'>
+        <div className='md:flex justify-center gap-5 my-20 mx-5'>
             <img src="banner.jpg" className=' rounded' />
             <div >
                 <h1 className='text-5xl font-semibold'>Welcome to The Toy Rifle World.</h1>

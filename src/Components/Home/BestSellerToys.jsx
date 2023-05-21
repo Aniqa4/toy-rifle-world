@@ -2,9 +2,9 @@ import React from 'react'
 
 function BestSellerToys() {
     return (
-        <div className='my-10'>
+        <div className='my-10 mx-5'>
             <h1 className=' text-center text-5xl mb-5 font-semibold'>Best Seller Toys</h1>
-            <div className='grid grid-cols-3 gap-10 rounded'>
+            <div className='md:grid grid-cols-3 gap-10 rounded'>
                 <div className='bg-gray-100 p-5'>
                     <img src="m416.jpg" className='w-11/12'/>
                     <h1 className=' font-semibold pt-5'>M416 Toy Assault Rifle</h1>

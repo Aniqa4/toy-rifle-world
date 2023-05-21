@@ -48,7 +48,7 @@ function ShopByCategory() {
 
     //console.log(ar);
     return (
-        <div data-aos="fade-left">
+        <div data-aos="fade-left" className='mx-5'>
             <h1 className=' text-center text-5xl font-semibold pb-5'>Shop by Category</h1>
             <Tabs>
                 <TabList>
@@ -62,7 +62,7 @@ function ShopByCategory() {
                 <TabPanel>
                     <div className='mb-10'>
                         <h1 className=' text-center text-2xl font-semibold'>Assault Rifles(AR)</h1>
-                        <div className='flex gap-20 justify-center mt-5 '>
+                        <div className='md:flex gap-20 justify-center mt-5 '>
                             {
                                 ar.map(x => <div key={x._id} className='border p-20 bg-cyan-900 text-white rounded'>
                                     <img src={x.picture} alt="m416" className='w-96 rounded' />
@@ -78,7 +78,7 @@ function ShopByCategory() {
                 <TabPanel>
                     <div className='mb-10'>
                         <h1 className=' text-center text-2xl font-semibold'>Sniper Rifles(SR)</h1>
-                        <div className='flex gap-20 justify-center mt-5 '>
+                        <div className='md:flex gap-20 justify-center mt-5 '>
                             {
                                 sr.map(x => <div key={x._id} className='border p-20 bg-cyan-900 text-white rounded'>
                                     <img src={x.picture} alt="m416" className='w-96 rounded' />
@@ -94,7 +94,7 @@ function ShopByCategory() {
                 <TabPanel>
                     <div className='mb-10'>
                         <h1 className=' text-center text-2xl font-semibold'>Submachine Gun(SMG)</h1>
-                        <div className='flex gap-20 justify-center mt-5 '>
+                        <div className='md:flex gap-20 justify-center mt-5 '>
                             {
                                 smg.map(x => <div key={x._id} className='border p-20 bg-cyan-900 text-white rounded'>
                                     <img src={x.picture} alt="m416" className='w-96 rounded' />

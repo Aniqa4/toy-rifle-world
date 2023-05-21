@@ -11,12 +11,12 @@ function Navbar() {
     logOut()
     .then()
     .catch(error=>{
-      //console.log(error);
+      console.log(error);
     })
   }
   return (
-    <div className='flex justify-between items-center bg-cyan-900 text-white py-5 px-5'>
-      <div className='flex gap-2 items-center'>
+    <div className='md:flex grid gap-5 justify-between items-center bg-cyan-900 text-white py-5 px-5'>
+      <div className='flex gap-2 justify-center items-center'>
         <img src="/toylogo.png" className=' w-14 rounded-full' />
         <h1 className='text-xl font-bold'>ToyRifleWorld</h1>
       </div>
@@ -31,7 +31,7 @@ function Navbar() {
         }
         <ActiveLink to='/blogs'>Blogs</ActiveLink>
       </div>
-      <div className='flex'>
+      <div className='flex justify-center'>
         {
           user && <img src={user.photoURL} className=' me-2 rounded-full' style={{ width: "46px",height:"46px" }} title={user.displayName} />
         }

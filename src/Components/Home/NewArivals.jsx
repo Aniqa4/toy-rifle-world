@@ -2,9 +2,9 @@ import React from 'react'
 
 function NewArivals() {
     return (
-        <div>
+        <div className='mx-5'>
             <h1 className=' text-center text-5xl mb-5 font-semibold'>New Arrivals</h1>
-            <div className='grid grid-cols-3 gap-10 rounded'>
+            <div className='md:grid grid-cols-3 gap-10 rounded'>
                 <div className='bg-gray-100 p-5'>
                     <img src="famas.jpeg" />
                     <h1 className=' font-semibold pt-5'>FAMAS Toy Assault Rifle</h1>

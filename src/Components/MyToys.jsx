@@ -7,6 +7,7 @@ import usetitle from '../Hooks/useTitle';
 function MyToys() {
   const [allToys, setAllToys] = useState([]);
   const { user, loading } = useContext(AuthContext);
+  const [sortedByPrice, setSortedByPrice] = useState(false);
   usetitle('My Toys')
 
   useEffect(() => {
@@ -40,6 +41,22 @@ function MyToys() {
         });
     }
   }
+
+  const sortDataByPrice = () => {
+    const sortedData = [...allToys];
+    sortedData.sort((a, b) => {
+      const priceA = parseFloat(a.price.replace('$', ''));
+      const priceB = parseFloat(b.price.replace('$', ''));
+      return priceA - priceB;
+    });
+    setAllToys(sortedData);
+    setSortedByPrice(true);
+  }
+
+  const resetSort = () => {
+    setAllToys([...allToys]);
+    setSortedByPrice(false);
+  }
   
 
   if (loading) {
@@ -54,6 +71,21 @@ function MyToys() {
   return (
     <div>
       <h1 className=' text-center text-2xl font-semibold my-20 py-5 bg-gray-100'>MY TOYS</h1>
+      <div className="text-right mb-4">
+        {!sortedByPrice ? (
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onClick={sortDataByPrice}
+          >
+            Sort by Price
+          </button>
+        ) : (
+          <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            onClick={resetSort}
+          >
+            Reset Sort
+          </button>
+        )}
+      </div>
       <table className='w-11/12 text-center mb-20'>
         <thead>
           <tr className=' border-b'>

@@ -25,7 +25,7 @@ function ToyDetails() {
     //console.log('toy',toyDetails);
     return (
         <div>
-            <h1 className='my-10 py-5 text-center text-2xl font-semibold bg-gray-100'>Toy Information</h1>
+            <h1 className='my-10 py-5 text-center text-2xl font-semibold bg-gray-100'>TOY INFORMATIONS</h1>
             <h1 className=' text-center text-4xl font-semibold'>{singleToyInfo.name}</h1>
             <div className='w-4/12 grid mx-auto py-5'><img src={singleToyInfo.picture} className='rounded' /></div>
             <div className='w-10/12 mx-auto my-20'>

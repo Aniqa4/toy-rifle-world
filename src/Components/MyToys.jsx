@@ -19,7 +19,7 @@ function MyToys() {
     const confirmed = window.confirm('Are you sure you want to delete this toy?');
     if (confirmed) {
       console.log('id', id);
-      fetch(`http://localhost:5000/myToys/${id}`, {
+      fetch(`https://toy-marketplace-server-aniqa4.vercel.app/myToys/${id}`, {
         method: 'DELETE'
       })
         .then(res => res.json())

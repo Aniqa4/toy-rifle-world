@@ -57,7 +57,7 @@ const router = createBrowserRouter([
             {
                 path:'/myToys/:id',
                 element:<UpdateMyToys></UpdateMyToys>,
-                loader:({params})=>fetch(`http://localhost:5000/myToys/${params.id}`)
+                loader:({params})=>fetch(`https://toy-marketplace-server-aniqa4.vercel.app/myToys/${params.id}`)
             }
         ]
     },

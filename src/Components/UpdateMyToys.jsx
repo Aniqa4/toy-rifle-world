@@ -37,7 +37,7 @@ function UpdateMyToys() {
                 }
             })
 
-            form.reset();
+            
     }
     return (
         <div className='my-20'>

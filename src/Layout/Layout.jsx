@@ -10,7 +10,7 @@ function Layout() {
             <div className='bg-base-100'>
                 <div className=' mx-auto  text-cyan-950'>
                     <Navbar></Navbar>
-                    <div className='container mx-auto'>
+                    <div className='md:container mx-auto'>
                         <Outlet></Outlet>
                     </div>
                     <Footer></Footer>

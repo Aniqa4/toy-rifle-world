@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../Components/Home/Home";
 import AllToys from "../Components/AllToys";
 import MyToys from "../Components/MyToys";
 import AddAToy from "../Components/AddAToy";
@@ -8,9 +7,10 @@ import Layout from "../Layout/Layout";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
 import ToyDetails from "../Components/ToyDetails";
-import Navigator from "../Components/Navigator/Navigator";
+import Navigator from "../Navigator/Navigator";
 import UpdateMyToys from "../Components/UpdateMyToys";
 import ErrorPage from "../Components/errorPage";
+import Home from "../Home/Home";
 
 
 const router = createBrowserRouter([

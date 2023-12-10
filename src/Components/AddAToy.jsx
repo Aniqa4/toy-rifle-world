@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { AuthContext } from './Provider/AuthProvider';
+import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import usetitle from '../Hooks/useTitle';
 

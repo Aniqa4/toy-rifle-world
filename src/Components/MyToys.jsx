@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { AuthContext } from './Provider/AuthProvider';
+import { AuthContext } from '../Provider/AuthProvider';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import usetitle from '../Hooks/useTitle';

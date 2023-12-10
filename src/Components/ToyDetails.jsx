@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { AuthContext } from './Provider/AuthProvider';
+import { AuthContext } from '../Provider/AuthProvider';
 import usetitle from '../Hooks/useTitle';
 
 function ToyDetails() {

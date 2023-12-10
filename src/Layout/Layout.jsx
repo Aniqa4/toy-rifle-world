@@ -8,9 +8,11 @@ function Layout() {
     return (
         <>
             <div className='bg-base-100'>
-                <div className='container mx-auto  text-cyan-950'>
+                <div className=' mx-auto  text-cyan-950'>
                     <Navbar></Navbar>
-                    <Outlet></Outlet>
+                    <div className='container mx-auto'>
+                        <Outlet></Outlet>
+                    </div>
                     <Footer></Footer>
                 </div>
             </div>

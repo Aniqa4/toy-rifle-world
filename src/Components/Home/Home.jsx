@@ -5,6 +5,7 @@ import ShopByCategory from './ShopByCategory';
 import NewArivals from './NewArivals';
 import BestSellerToys from './BestSellerToys';
 import usetitle from '../../Hooks/useTitle';
+import Reviews from './Reviews';
 
 function Home() {
   usetitle('Home')
@@ -15,6 +16,7 @@ function Home() {
       <NewArivals></NewArivals>
       <BestSellerToys></BestSellerToys>
       <ShopByCategory></ShopByCategory>
+      <Reviews/>
     </div>
   )
 }
